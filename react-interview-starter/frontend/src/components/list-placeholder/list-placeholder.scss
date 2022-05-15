@@ -1,0 +1,45 @@
+@use 'sass:math';
+@import '../../scss-utilities/variables.scss';
+
+.list-placeholder {
+  width: 100%;
+  border-bottom: 1px solid $accent-color-bright;
+  text-align: center;
+  display: block;
+  padding: math.div($gutter, 3) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    display: block;
+  }
+  button {
+    display: none;
+    border: 0;
+    border: 1px solid $accent-color-bright;
+    background-color: $primary-color;
+    border-radius: 5px;
+    padding: math.div($gutter, 3) math.div($gutter, 2);
+    margin-left: $gutter;
+    &:hover {
+      cursor: pointer;
+      background-color: $accent-color-bright;
+    }
+  }
+}
+@media (max-width: $breakpoint-lg) {
+  .post-list {
+    .list-placeholder {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      button {
+        display: block;
+      }
+      span {
+        display: block;
+        margin-right: calc(50vw - 9.5px);
+      }
+    }
+  }
+}

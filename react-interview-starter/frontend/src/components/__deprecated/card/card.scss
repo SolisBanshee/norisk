@@ -1,0 +1,99 @@
+@use "sass:math";
+@import "../../scss-utilities/variables.scss";
+.card{
+    list-style-type: none;
+    width: 100%;
+    margin-bottom: calc( $gutter* .25 ) ;
+    background-color:$bg-color;
+    color: $primary-color;
+  
+    .card_header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 0;
+        border: 1px solid $accent-color-bright;
+        width: 100%;
+        background-color: transparent;
+        color: currentColor;
+        &:hover{
+            background-color: $hover-color;
+            cursor: pointer;
+        }
+        &_id{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc( $gutter *1.5);
+            width: calc( $gutter *1.5);
+            border-right: 1px solid $accent-color-bright;
+            border-radius: 5px;
+        }
+
+        &_dropdown{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc( $gutter *1.5);
+            width: calc( $gutter *1.5);
+            border-left: 1px solid $accent-color-bright;
+            
+            p{
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover{
+                    transform: scale(1.5);
+                    transform: rotate(45deg);
+                    transition: all .25s ease-in-out;
+                    
+                }
+            }
+        }
+
+    }
+
+    .card_body{
+        overflow: hidden;
+        max-height: 0px;
+        height: 0px;
+        
+  
+
+        &_category{
+            width: 100%;
+            text-decoration: underline;
+            margin-bottom: math.div( $gutter, 2);
+        }
+        &_wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: math.div($gutter, 2);
+        }
+        &_item{
+            width: 50%;
+        }
+        &.active{
+            height: 100%;
+            max-height: 1000px;
+            padding: math.div($gutter , 2);
+            border: 1px solid $accent-color-bright;
+        }
+    }
+}
+
+.btn{
+    background-color: $accent-color-bright;
+    color: $bg-color;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: math.div($gutter,3) 0px;
+     &:hover{
+         cursor: pointer;
+         background-color: $primary-color;
+     }
+}

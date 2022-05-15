@@ -1,0 +1,21 @@
+@import '../../scss-utilities/variables.scss';
+
+.user-list-navigation {
+  grid-area: nav;
+  background-color: $bg-color-dark;
+  color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.35);
+  height: calc(100vh - 51px);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5;
+
+  @media (max-width: $breakpoint-lg) {
+    overflow-y: scroll;
+    width: 100%;
+    position: absolute;
+    top: 51px;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,21 @@
+@import '../../scss-utilities/variables.scss';
+
+.post-body {
+  grid-area: body;
+  padding: 0px 15px;
+  background-color: $bg-color-bright;
+  word-wrap: break-word;
+  height: calc(100vh - 193px);
+  overflow-y: auto;
+  &.mobile-active {
+    @media (max-width: $breakpoint-lg) {
+      width: 100%;
+      position: absolute;
+      top: 51px;
+      z-index: 3;
+      left: 0;
+      height: calc(100vh - 121px);
+      padding: 0;
+    }
+  }
+}

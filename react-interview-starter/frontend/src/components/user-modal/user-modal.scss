@@ -1,0 +1,135 @@
+@use 'sass:math';
+@import '../../scss-utilities/variables.scss';
+
+.profile-overlay {
+  backdrop-filter: blur(0px);
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+  display: block;
+  position: fixed;
+  background-color: rgba($bg-color, 0.6);
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    backdrop-filter: blur(5px);
+  }
+}
+
+.profile-overlay__wrapper {
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: translateY(-$gutter);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 11;
+  color: $bg-color;
+  display: block;
+  position: fixed;
+  top: calc(50vh - 329px);
+  left: calc(50vw - 412px);
+  background-color: $primary-color;
+  padding: $gutter;
+  border-radius: 5px;
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .profile-overlay__header {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid $bg-color;
+    padding-bottom: 20px;
+  }
+
+  .profile-overlay__body {
+    margin-top: math.div($gutter, 2);
+    max-height: 400px;
+
+    &__category {
+      text-decoration: underline;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 1.5rem;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: math.div($gutter, 2);
+    }
+    a {
+      &:hover {
+        color: $accent-color-bright;
+      }
+    }
+    &__item {
+      width: 50%;
+      padding: 5px 0px;
+      color: $bg-color;
+    }
+  }
+
+  .profile-overlay__footer {
+    border-top: 1px solid $bg-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-map {
+      margin-top: math.div($gutter, 2);
+      height: 250px;
+      width: 100%;
+
+      .leaflet-container {
+        height: 250px;
+      }
+    }
+    @media (max-width: $breakpoint-lg) {
+      max-height: 200px;
+      overflow-y: scroll;
+    }
+  }
+  @media (max-width: $breakpoint-lg) {
+    top: $gutter;
+    left: 10vw;
+    max-width: 70vw;
+    .profile-overlay__body {
+      max-height: 250px;
+      overflow-y: scroll;
+      &__item {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      &__wrapper {
+        justify-content: center;
+        align-items: center;
+      }
+      &__category {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.close-btn {
+  border: 0;
+  border: 1px solid $accent-color-dark;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #fafafa;
+  color: $bg-color;
+  &:hover {
+    cursor: pointer;
+    background-color: $accent-color-bright;
+    color: #fafafa;
+  }
+}

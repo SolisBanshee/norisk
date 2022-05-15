@@ -1,0 +1,60 @@
+@use 'sass:math';
+@import '../../scss-utilities/variables.scss';
+
+.user-list__item {
+  width: 100%;
+  border-bottom: 1px solid $accent-color-bright;
+  display: flex;
+  align-items: center;
+  border-radius: 0px 5px 5px 0px;
+
+  &.active {
+    background-color: $accent-color-bright;
+    color: $accent-color-dark;
+    border-bottom: 1px solid $accent-color-dark;
+
+    .user-list__profile-button {
+      color: $accent-color-dark;
+      border-left: 1px solid $accent-color-dark;
+      border-right: 1px solid $accent-color-dark;
+    }
+    &:hover {
+      background-color: $accent-color-bright;
+    }
+  }
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .user-list__user-button {
+    padding: 15px;
+    padding: math.div($gutter, 2);
+    width: 100%;
+    border: 0;
+    background-color: transparent;
+    color: currentColor;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .user-list__profile-button {
+    padding: 15px;
+    border: 0;
+    background-color: transparent;
+    color: currentColor;
+    cursor: pointer;
+    border-left: 1px solid $accent-color-bright;
+    border-right: 1px solid $accent-color-bright;
+    border-radius: 5px;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+    &:hover {
+      p {
+        transform: scale(1.25);
+      }
+    }
+  }
+}

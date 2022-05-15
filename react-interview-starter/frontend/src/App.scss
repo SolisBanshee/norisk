@@ -1,0 +1,23 @@
+@use 'sass:math';
+@import './scss-utilities/variables.scss';
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: $bg-color-bright;
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid $accent-color-bright;
+    color: $primary-color;
+    transition: all 0.25s ease-in-out;
+    &:hover {
+      color: $accent-color-bright;
+    }
+  }
+}
+
+.no-entry {
+  width: 100%;
+  text-align: center;
+}

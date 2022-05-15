@@ -1,0 +1,37 @@
+@use 'sass:math';
+@import '../../scss-utilities/variables.scss';
+
+.comment-list__item {
+  list-style: none;
+  margin-bottom: math.div($gutter, 2);
+  background-color: $bg-color;
+  padding: math.div($gutter, 2);
+  border-radius: math.div($gutter, 3);
+  white-space: pre;
+  width: 50%;
+  min-width: 400px;
+  margin-left: auto;
+  margin-right: $gutter;
+
+  &-name {
+    border-bottom: 1px solid $accent-color-bright;
+    margin-bottom: math.div($gutter, 3);
+    padding-bottom: math.div($gutter, 3);
+    white-space: initial;
+  }
+  &-body {
+    padding: math.div($gutter, 2) math.div($gutter, 3);
+
+    &__message {
+      width: 100%;
+      height: auto;
+      white-space: initial;
+      margin: 0;
+    }
+  }
+  &-mail {
+    border-top: 1px solid $accent-color-bright;
+    margin-top: math.div($gutter, 3);
+    padding-top: math.div($gutter, 3);
+  }
+}

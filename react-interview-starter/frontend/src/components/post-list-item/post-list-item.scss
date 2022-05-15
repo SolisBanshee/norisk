@@ -1,0 +1,45 @@
+@use 'sass:math';
+@import '../../scss-utilities/variables.scss';
+
+.post-list__item {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+
+  &.active {
+    background-color: $accent-color-bright;
+    color: $accent-color-dark;
+    border-bottom: 1px solid $accent-color-dark;
+
+    .post-list__post-button {
+      &:hover {
+        background-color: $accent-color-bright;
+      }
+    }
+  }
+
+  .post-list__post-button {
+    padding: 15px;
+    padding: math.div($gutter, 2);
+    width: 100%;
+    border: 0;
+    background-color: transparent;
+    color: currentColor;
+    text-align: left;
+    span {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-word;
+      text-decoration: underline;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $hover-color;
+    }
+  }
+}

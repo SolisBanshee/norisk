@@ -1,0 +1,13 @@
+@use 'sass:math';
+@import '../../scss-utilities/variables.scss';
+
+.post-body__message {
+  background-color: $bg-color-dark;
+  padding: math.div($gutter, 2);
+  border-radius: math.div($gutter, 3);
+  max-width: 45%;
+  width: 400px;
+  align-self: start;
+  margin-top: $gutter;
+  margin-left: $gutter;
+}

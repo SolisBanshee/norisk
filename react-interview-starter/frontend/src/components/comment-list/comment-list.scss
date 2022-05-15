@@ -1,0 +1,9 @@
+@use "sass:math";
+@import "../../scss-utilities/variables.scss";
+
+.comment-list{
+    margin-top: $gutter;
+    border-top: 1px solid $accent-color-bright;
+    padding-top: $gutter;
+    overflow-y: hidden
+}
